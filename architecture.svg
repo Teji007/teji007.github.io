@@ -1,0 +1,45 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vaurypt security architecture diagram">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6c65b"/><stop offset="1" stop-color="#d88b2f"/></linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity=".25"/></filter>
+  </defs>
+  <rect width="1200" height="400" rx="28" fill="#0d131f"/>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <rect x="45" y="140" width="180" height="120" rx="22" fill="#151e2d" stroke="#2d3b51" stroke-width="2" filter="url(#soft)"/>
+    <text x="135" y="185" text-anchor="middle" fill="#aab7c8" font-size="15">INPUT</text>
+    <text x="135" y="220" text-anchor="middle" fill="#f2f5fa" font-size="22" font-weight="700">File / Folder</text>
+    <text x="135" y="247" text-anchor="middle" fill="#73839a" font-size="13">+ metadata</text>
+    
+    <path d="M225 200H275" stroke="#dca63f" stroke-width="4" stroke-linecap="round"/>
+    <path d="M263 188l16 12-16 12" fill="none" stroke="#dca63f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="285" y="100" width="230" height="200" rx="24" fill="#151e2d" stroke="#a8782d" stroke-width="2" filter="url(#soft)"/>
+    <text x="400" y="138" text-anchor="middle" fill="#aab7c8" font-size="15">PASSWORD HARDENING</text>
+    <text x="400" y="181" text-anchor="middle" fill="#f6c65b" font-size="24" font-weight="800">Argon2id</text>
+    <text x="400" y="213" text-anchor="middle" fill="#dbe2ec" font-size="14">Key-encryption key</text>
+    <text x="400" y="239" text-anchor="middle" fill="#73839a" font-size="13">random salt + cost profile</text>
+    <rect x="340" y="255" width="120" height="10" rx="5" fill="#243149"/>
+    <rect x="340" y="255" width="94" height="10" rx="5" fill="url(#gold)"/>
+
+    <path d="M515 200H565" stroke="#dca63f" stroke-width="4" stroke-linecap="round"/>
+    <path d="M553 188l16 12-16 12" fill="none" stroke="#dca63f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="575" y="78" width="260" height="244" rx="24" fill="#151e2d" stroke="#2d3b51" stroke-width="2" filter="url(#soft)"/>
+    <text x="705" y="118" text-anchor="middle" fill="#aab7c8" font-size="15">AUTHENTICATED CONTAINER</text>
+    <rect x="620" y="142" width="170" height="40" rx="12" fill="#1b2638" stroke="#2b3c56"/>
+    <text x="705" y="168" text-anchor="middle" fill="#eef2f7" font-size="16" font-weight="700">AES-256-GCM</text>
+    <rect x="620" y="194" width="170" height="40" rx="12" fill="#1b2638" stroke="#2b3c56"/>
+    <text x="705" y="220" text-anchor="middle" fill="#eef2f7" font-size="16" font-weight="700">ChaCha20-Poly1305</text>
+    <rect x="620" y="246" width="170" height="40" rx="12" fill="#1b2638" stroke="#2b3c56"/>
+    <text x="705" y="272" text-anchor="middle" fill="#f6c65b" font-size="14" font-weight="700">3-stage cascade</text>
+
+    <path d="M835 200H885" stroke="#dca63f" stroke-width="4" stroke-linecap="round"/>
+    <path d="M873 188l16 12-16 12" fill="none" stroke="#dca63f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="895" y="120" width="260" height="160" rx="24" fill="#151e2d" stroke="#2d3b51" stroke-width="2" filter="url(#soft)"/>
+    <text x="1025" y="160" text-anchor="middle" fill="#aab7c8" font-size="15">OUTPUT</text>
+    <text x="1025" y="199" text-anchor="middle" fill="#f2f5fa" font-size="22" font-weight="700">.svlt container</text>
+    <text x="1025" y="226" text-anchor="middle" fill="#73839a" font-size="13">encrypted metadata</text>
+    <text x="1025" y="249" text-anchor="middle" fill="#73839a" font-size="13">integrity verification</text>
+  </g>
+</svg>

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f18">
+  <meta name="description" content="Vaurypt — advanced Windows file, folder and backup encryption by Tejinder Pal Singh.">
+  <meta property="og:title" content="Vaurypt — Advanced File Encryption for Windows">
+  <meta property="og:description" content="Encrypt files and folders locally before storing, backing up or sharing them.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tej007.github.io/Vaurypt/">
+  <meta property="og:image" content="assets/vaurypt-ui.png">
+  <title>Vaurypt — Advanced File Encryption for Windows</title>
+  <link rel="icon" href="assets/vaurypt-logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header" id="top">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Vaurypt home">
+        <img src="assets/vaurypt-logo.svg" alt="Vaurypt" class="brand-logo">
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#security">Security</a>
+        <a href="#features">Features</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="https://github.com/Tej007/Vaurypt" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn btn-primary" href="https://github.com/Tej007/Vaurypt/releases/latest" target="_blank" rel="noreferrer">Download</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="dot"></span> Windows-first privacy software</div>
+        <h1>Private files.<br><span>Stronger by design.</span></h1>
+        <p class="hero-sub">Vaurypt is an advanced desktop application for encrypting files, folders and backups before they are stored, shared or uploaded.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="https://github.com/Tej007/Vaurypt/releases/latest" target="_blank" rel="noreferrer">Download Vaurypt <span>↗</span></a>
+          <a class="btn btn-ghost btn-lg" href="#architecture">Explore the security model</a>
+        </div>
+        <div class="hero-meta">
+          <span>Developer <strong>Tejinder Pal Singh</strong></span>
+          <span class="sep">•</span>
+          <span>Windows 10/11</span>
+          <span class="sep">•</span>
+          <span>Vaurypt 2.1.1</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="glow glow-a"></div><div class="glow glow-b"></div>
+        <div class="window-frame">
+          <div class="window-bar">
+            <div class="window-dots"><span></span><span></span><span></span></div>
+            <div class="window-title">Vaurypt</div>
+          </div>
+          <img src="assets/vaurypt-ui.png" alt="Vaurypt encryption interface" class="ui-shot">
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="wrap trust-grid">
+        <div><strong>Argon2id</strong><span>Password-based key derivation</span></div>
+        <div><strong>AES-256-GCM</strong><span>Authenticated encryption mode</span></div>
+        <div><strong>ChaCha20-Poly1305</strong><span>Authenticated encryption mode</span></div>
+        <div><strong>Encrypted metadata</strong><span>Names and archive metadata stay inside</span></div>
+      </div>
+    </section>
+
+    <section id="security" class="section wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Security first</div>
+          <h2>Encryption is only part of the problem.</h2>
+        </div>
+        <p>Vaurypt focuses on the parts users actually depend on: credential hardening, authenticated containers, key management, metadata protection, integrity checks and safe workflows.</p>
+      </div>
+      <div class="security-grid">
+        <article class="card feature-card accent"><span class="icon">⌘</span><h3>Strong key derivation</h3><p>Argon2id turns user credentials into encryption keys with configurable security profiles and random salts.</p></article>
+        <article class="card feature-card"><span class="icon">◈</span><h3>Authenticated containers</h3><p>Encryption and integrity checks work together so wrong credentials and tampered containers fail cleanly.</p></article>
+        <article class="card feature-card"><span class="icon">▦</span><h3>Protected metadata</h3><p>Original filenames and archive metadata remain inside the encrypted container rather than sitting beside the ciphertext.</p></article>
+        <article class="card feature-card"><span class="icon">↻</span><h3>Recovery-aware design</h3><p>Recovery keys, keyfiles and multiple access slots provide alternatives to keeping one fragile password in one place.</p></article>
+      </div>
+      <div class="callout"><div class="callout-icon">!</div><div><strong>No “uncrackable” claims.</strong><p>Vaurypt is designed to make offline guessing difficult and to detect tampering. Security still depends on the implementation, strong credentials, configuration and the security of the machine handling plaintext.</p></div></div>
+    </section>
+
+    <section id="architecture" class="section section-alt">
+      <div class="wrap">
+        <div class="section-head center"><div><div class="eyebrow">Under the hood</div><h2>A layered container architecture.</h2></div><p>Vaurypt separates password hardening, encryption, metadata protection and container integrity instead of treating “more ciphers” as a substitute for good key management.</p></div>
+        <div class="architecture"><img src="assets/architecture.svg" alt="Vaurypt security architecture diagram"></div>
+        <div class="mode-grid">
+          <article class="mode"><div class="mode-kicker">Primary mode</div><h3>AES-256-GCM</h3><p>Authenticated container encryption for a clean, modern default workflow.</p></article>
+          <article class="mode"><div class="mode-kicker">Alternative</div><h3>ChaCha20-Poly1305</h3><p>Authenticated stream-cipher construction with a different performance profile.</p></article>
+          <article class="mode"><div class="mode-kicker">Compatibility</div><h3>Three-stage cascade</h3><p>AES-256-CTR → ChaCha20 → AES-256-CTR with authentication for the legacy-compatible path.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section wrap">
+      <div class="section-head"><div><div class="eyebrow">40 capability areas</div><h2>Built for encryption, backup and control.</h2></div><p>From drag-and-drop encryption to audit verification, the project is designed as a complete security utility rather than a single cipher button.</p></div>
+      <div class="filter-row" role="tablist" aria-label="Feature categories">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="crypto">Crypto</button>
+        <button class="filter" data-filter="keys">Keys & Access</button>
+        <button class="filter" data-filter="backup">Backup & Cloud</button>
+        <button class="filter" data-filter="windows">Windows & UX</button>
+        <button class="filter" data-filter="ops">Diagnostics & Ops</button>
+      </div>
+      <div class="feature-grid" id="featureGrid">
+        <article class="feature-tile" data-cat="crypto"><span>01</span><h3>AES-256-GCM</h3><p>Authenticated container cipher.</p></article>
+        <article class="feature-tile" data-cat="crypto"><span>02</span><h3>ChaCha20-Poly1305</h3><p>Alternative authenticated mode.</p></article>
+        <article class="feature-tile" data-cat="crypto"><span>03</span><h3>3-stage cascade</h3><p>AES-CTR → ChaCha20 → AES-CTR.</p></article>
+        <article class="feature-tile" data-cat="crypto"><span>04</span><h3>Master-key architecture</h3><p>Random per-container master key.</p></article>
+        <article class="feature-tile" data-cat="keys"><span>05</span><h3>Multiple recipients</h3><p>Separate password access slots.</p></article>
+        <article class="feature-tile" data-cat="keys"><span>06</span><h3>Recovery key</h3><p>Independent recovery credential slot.</p></article>
+        <article class="feature-tile" data-cat="keys"><span>07</span><h3>Hardware keyfile</h3><p>USB/removable key factor.</p></article>
+        <article class="feature-tile" data-cat="keys"><span>08</span><h3>Multi-factor access</h3><p>Password + keyfile mode.</p></article>
+        <article class="feature-tile" data-cat="keys"><span>09</span><h3>Password-manager handoff</h3><p>Structured export + clipboard timeout.</p></article>
+        <article class="feature-tile" data-cat="keys"><span>10</span><h3>Secure password UI</h3><p>Strength display and 10–32 character generation.</p></article>
+        <article class="feature-tile" data-cat="ops"><span>11</span><h3>Secure cleanup</h3><p>Best-effort overwrite/delete workflow.</p></article>
+        <article class="feature-tile" data-cat="crypto"><span>12</span><h3>Integrity verification</h3><p>Full chunk authentication verification.</p></article>
+        <article class="feature-tile" data-cat="ops"><span>13</span><h3>Container health</h3><p>Header and container inspection.</p></article>
+        <article class="feature-tile" data-cat="crypto"><span>14</span><h3>Chunked encryption</h3><p>4 MiB authenticated chunks.</p></article>
+        <article class="feature-tile" data-cat="ops"><span>15</span><h3>Resumable-friendly processing</h3><p>Chunk boundaries plus in-session resume.</p></article>
+        <article class="feature-tile" data-cat="windows"><span>16</span><h3>Pause / resume / cancel</h3><p>Worker controls for long jobs.</p></article>
+        <article class="feature-tile" data-cat="backup"><span>17</span><h3>Dedup awareness</h3><p>SHA-256 duplicate scanner.</p></article>
+        <article class="feature-tile" data-cat="crypto"><span>18</span><h3>Metadata encryption</h3><p>Original names and metadata protected.</p></article>
+        <article class="feature-tile" data-cat="crypto"><span>19</span><h3>Hidden file names</h3><p>Names stay within encrypted metadata.</p></article>
+        <article class="feature-tile" data-cat="keys"><span>20</span><h3>Decoy access mode</h3><p>Dual-access container profiles.</p></article>
+        <article class="feature-tile" data-cat="keys"><span>21</span><h3>Alternate access</h3><p>Independent access profile behavior.</p></article>
+        <article class="feature-tile" data-cat="keys"><span>22</span><h3>QR transfer</h3><p>QR export for access packages.</p></article>
+        <article class="feature-tile" data-cat="keys"><span>23</span><h3>Secure key sharing</h3><p>Expiring .svaccess packages.</p></article>
+        <article class="feature-tile" data-cat="backup"><span>24</span><h3>Telegram</h3><p>Streaming bot upload workflow.</p></article>
+        <article class="feature-tile" data-cat="backup"><span>25</span><h3>Cloud</h3><p>WebDAV + S3-compatible upload.</p></article>
+        <article class="feature-tile" data-cat="backup"><span>26</span><h3>Encrypted backup</h3><p>Backup profiles use Vaurypt encryption.</p></article>
+        <article class="feature-tile" data-cat="backup"><span>27</span><h3>Versioned backups</h3><p>Timestamped encrypted containers.</p></article>
+        <article class="feature-tile" data-cat="windows"><span>28</span><h3>Shredder workflow</h3><p>Dedicated cleanup page.</p></article>
+        <article class="feature-tile" data-cat="windows"><span>29</span><h3>Drag & drop</h3><p>Drop files/folders into Encrypt.</p></article>
+        <article class="feature-tile" data-cat="windows"><span>30</span><h3>Explorer integration</h3><p>Windows right-click actions.</p></article>
+        <article class="feature-tile" data-cat="windows"><span>31</span><h3>Portable mode</h3><p>Portable flag for local settings.</p></article>
+        <article class="feature-tile" data-cat="windows"><span>32</span><h3>Auto-lock</h3><p>Timer + Ctrl+L lock action.</p></article>
+        <article class="feature-tile" data-cat="ops"><span>33</span><h3>Clipboard hygiene</h3><p>Sensitive field clearing and timeout.</p></article>
+        <article class="feature-tile" data-cat="ops"><span>34</span><h3>Audit log</h3><p>Local event history without secrets.</p></article>
+        <article class="feature-tile" data-cat="ops"><span>35</span><h3>Tamper-evident audit</h3><p>Hash-chained log verification.</p></article>
+        <article class="feature-tile" data-cat="crypto"><span>36</span><h3>Future-proof format</h3><p>Versioned SVLT v2 header.</p></article>
+        <article class="feature-tile" data-cat="crypto"><span>37</span><h3>Algorithm deprecation</h3><p>Legacy v1 detection / compatibility.</p></article>
+        <article class="feature-tile" data-cat="ops"><span>38</span><h3>Cryptographic self-test</h3><p>Implementation and round-trip checks.</p></article>
+        <article class="feature-tile" data-cat="ops"><span>39</span><h3>Benchmark</h3><p>Local AES-GCM / ChaCha20 benchmark.</p></article>
+        <article class="feature-tile" data-cat="crypto"><span>40</span><h3>Security profiles</h3><p>Balanced / High / Maximum KDF cost.</p></article>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="wrap showcase-grid">
+        <div class="showcase-copy">
+          <div class="eyebrow">Designed for real workflows</div>
+          <h2>Encrypt once. Store anywhere.</h2>
+          <p>Vaurypt keeps the local encryption step in your hands, then lets the resulting container move through your preferred workflow — backups, removable media, Telegram, WebDAV or S3-compatible storage.</p>
+          <div class="mini-list">
+            <div><b>01</b><span>Choose a file or an entire folder.</span></div>
+            <div><b>02</b><span>Pick compression and security profile.</span></div>
+            <div><b>03</b><span>Generate a strong password or use your access factors.</span></div>
+            <div><b>04</b><span>Encrypt, verify, then store/share the container.</span></div>
+          </div>
+        </div>
+        <div class="workflow-card">
+          <div class="workflow-top"><span>VAURYPT WORKFLOW</span><span class="live-dot"></span></div>
+          <div class="wf-row"><span class="wf-num">01</span><div><strong>Source</strong><small>File or folder</small></div><span>→</span></div>
+          <div class="wf-row"><span class="wf-num">02</span><div><strong>Protect</strong><small>Argon2id + authenticated encryption</small></div><span>→</span></div>
+          <div class="wf-row"><span class="wf-num">03</span><div><strong>Package</strong><small>Encrypted metadata + integrity</small></div><span>→</span></div>
+          <div class="wf-row"><span class="wf-num">04</span><div><strong>Store</strong><small>Local, cloud or Telegram</small></div><span>✓</span></div>
+          <div class="wf-progress"><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section wrap">
+      <div class="section-head center"><div><div class="eyebrow">Questions, answered</div><h2>Security without the marketing fog.</h2></div></div>
+      <div class="faq-grid">
+        <details open><summary>Can a Vaurypt file be opened without the password?</summary><p>Not through normal decryption. An attacker with the container can still attempt offline password guesses, so password quality and key-management practices matter.</p></details>
+        <details><summary>Is Vaurypt “uncrackable”?</summary><p>No. Vaurypt intentionally avoids absolute claims. It is designed around established cryptographic primitives, password hardening, authenticated containers and explicit threat-model limitations.</p></details>
+        <details><summary>What happens if I forget the password?</summary><p>There is no universal password-recovery mechanism. Recovery keys and keyfiles are optional ways to create additional access paths.</p></details>
+        <details><summary>Can I protect folders, not just individual files?</summary><p>Yes. Vaurypt can package and encrypt an entire folder while preserving its internal structure inside the encrypted container.</p></details>
+        <details><summary>Does cloud storage see my original filenames?</summary><p>The intended container workflow keeps original names and archive metadata inside the encrypted payload rather than exposing them as ordinary cloud-side files.</p></details>
+        <details><summary>Is the source code open source?</summary><p>No. Vaurypt is source-available/proprietary. Inspecting source for security review or learning is permitted under the project terms; reuse, modification, redistribution and integration require permission.</p></details>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="wrap cta-card">
+        <div><div class="eyebrow">Vaurypt 2.1.1</div><h2>Put a stronger boundary around your files.</h2><p>Download the Windows build or inspect the project documentation.</p></div>
+        <div class="cta-actions"><a class="btn btn-primary btn-lg" href="https://github.com/Tej007/Vaurypt/releases/latest" target="_blank" rel="noreferrer">Download for Windows</a><a class="btn btn-ghost btn-lg" href="https://github.com/Tej007/Vaurypt" target="_blank" rel="noreferrer">View on GitHub</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div><img src="assets/vaurypt-logo.svg" alt="Vaurypt" class="footer-logo"><p>Advanced file, folder and backup encryption for Windows.</p></div>
+      <div><div class="footer-title">Project</div><a href="https://github.com/Tej007/Vaurypt" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/Tej007/Vaurypt/releases/latest" target="_blank" rel="noreferrer">Releases</a><a href="#security">Security</a></div>
+      <div><div class="footer-title">Developer</div><p class="dev-name">Tejinder Pal Singh</p><p>Source-available / proprietary licensing.</p></div>
+    </div>
+    <div class="wrap footer-bottom"><span>© 2026 Tejinder Pal Singh. Vaurypt.</span><a href="#top">Back to top ↑</a></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
