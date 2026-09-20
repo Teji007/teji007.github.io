@@ -20,7 +20,7 @@ A polished static landing page for **Vaurypt**, the Windows encryption/backup pr
 5. Wait for the site to publish.
 
 The page links currently point to:
-- GitHub: `https://github.com/Tej007/Vaurypt`
-- Latest release: `https://github.com/Tej007/Vaurypt/releases/latest`
+- GitHub: `https://github.com/Teji007/Vaurypt`
+- Latest release: `https://github.com/Teji007/Vaurypt/releases/latest`
 
 Update those URLs if the repository address changes.
